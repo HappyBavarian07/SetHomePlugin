@@ -1,0 +1,37 @@
+name: SetHomePlugin
+main: de.happybavarian07.sethomeplugin.SetHomePlugin
+version: 1.0
+api-version: 1.13
+
+commands:
+  sethome:
+    usage: /sethome <Homename> [<Player>]
+    description: Set a home to you or an specific Player
+  homes:
+    usage: /homes [<Player>]
+    description: Lists your homes or the Homes from another Player
+  home:
+    usage: /home <Homename> [<Player>]
+    description: Teleports you to an Home from you or from another Player
+  removehome:
+    usage: /removehome <Homename>
+    description: Remove a home to you or an specific Player
+
+permissions:
+  sethome.*:
+    default: op
+    children:
+      sethome.sethome:
+        default: true
+        children:
+          sethome.sethome.others: true
+      sethome.homes:
+        default: true
+        children:
+          sethome.homes.other: true
+      sethome.hometp:
+        default: true
+        children:
+          sethome.hometp.other: true
+      sethome.removehome:
+        default: true
