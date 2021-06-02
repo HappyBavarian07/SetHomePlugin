@@ -8,7 +8,7 @@ commands:
     usage: /sethome <Homename> [<Player>]
     description: Set a home to you or an specific Player
   homes:
-    usage: /homes [<Player>]
+    usage: /homes <Homename> [<Player>]
     description: Lists your homes or the Homes from another Player
   home:
     usage: /home <Homename> [<Player>]
@@ -21,17 +21,10 @@ permissions:
   sethome.*:
     default: op
     children:
-      sethome.sethome:
-        default: true
-        children:
-          sethome.sethome.others: true
-      sethome.homes:
-        default: true
-        children:
-          sethome.homes.other: true
-      sethome.hometp:
-        default: true
-        children:
-          sethome.hometp.other: true
-      sethome.removehome:
-        default: true
+      sethome.sethome: true
+      sethome.sethome.others: true
+      sethome.homes: true
+      sethome.homes.other: true
+      sethome.hometp: true
+      sethome.hometp.other: true
+      sethome.removehome: true
